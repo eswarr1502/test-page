@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News - Palestine Awareness</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+         /* Header Styles */
+        .header {
+            background-color: #005c0c;
+            color: white;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+        }
+
+        .header img {
+            height: 100px;
+            width: 100px;
+        }
+
+        .header .logo-container h1 {
+            margin-left: 15px;
+            font-size: 24px;
+        }
+
+        .header nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+            position: relative;
+            font-size: 1.2em;
+        }
+
+        .header nav a::after {
+            content: "";
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background-color: #d4af37;
+            bottom: -5px;
+            left: 0;
+            transition: width 0.3s;
+        }
+
+        .header nav a:hover::after {
+            width: 100%;
+        }
+
+        .header nav a:hover {
+            color: #d4af37;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .section {
+            margin: 40px 0;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-out;
+            text-align: justify;
+        }
+        .section:hover {
+            transform: scale(1.05);
+        }
+        .section img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+        h1, h2 {
+            color: white
+        }
+        p {
+            font-size: 1.1em;
+            line-height: 1.6;
+        }
+        * {
+            box-sizing: border-box;
+        }
+        .mySlides {
+            display: none;
+        }
+        img {
+            vertical-align: middle;
+            width: 100%;
+            height: 400px; /* Fixed height for all slideshow images */
+            object-fit: cover; /* Ensures images maintain aspect ratio */
+        }
+        .slideshow-container {
+            max-width: 1000px;
+            position: relative;
+            margin: 50px auto; /* Added space between header and slideshow */
+            border: 5px solid #d4af37;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            border-radius: 15px;
+            overflow: hidden;
+        }
+        .text {
+            color: #fff;
+            font-size: 18px;
+            padding: 8px 12px;
+            position: absolute;
+            bottom: 8px;
+            width: 100%;
+            text-align: center;
+            background-color: rgba(0, 0, 0, 0.5);
+            border-radius: 0 0 15px 15px;
+        }
+        .numbertext {
+            color: #f2f2f2;
+            font-size: 12px;
+            padding: 8px 12px;
+            position: absolute;
+            top: 0;
+        }
+        .dot {
+            height: 15px;
+            width: 15px;
+            margin: 0 2px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+            transition: background-color 0.6s ease;
+        }
+        .active {
+            background-color: #717171;
+        }
+        .fade {
+            animation-name: fade;
+            animation-duration: 1.5s;
+        }
+        @keyframes fade {
+            from {
+                opacity: 0.4
+            }
+            to {
+                opacity: 1
+            }
+        }
+        @media only screen and (max-width: 300px) {
+            .text {
+                font-size: 11px
+            }
+        }
+        .mission, .support, .involved {
+            background-color: #eaeaea;
+            padding: 20px;
+            border-left: 5px solid #d4af37;
+        }
+        .footer {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #000;
+            color: #fff;
+            padding: 20px;
+            margin-top: 40px;
+        }
+        .additional-content {
+            background-color: #fff;
+            padding: 20px;
+            border-top: 2px solid #d4af37;
+            text-align: center;
+        }
+        .additional-content h2 {
+            color: #005c0c;
+        }
+
+        footer {
+            background-color: #005c0c;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        .footer-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            max-width: 1200px;
+            margin: auto;
+            padding: 20px;
+        }
+
+        .footer-section {
+            flex: 1;
+            min-width: 250px;
+            margin: 10px;
+        }
+
+        .footer-section h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+            border-bottom: 2px solid white;
+            display: inline-block;
+            padding-bottom: 5px;
+        }
+
+        .footer-section ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-section ul li {
+            margin: 5px 0;
+        }
+
+        .footer-section ul li a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .footer-section ul li a:hover {
+            text-decoration: underline;
+        }
+
+        .social-icons img {
+            width: 50px;
+            height: 50px;
+        }
+
+        .footer-bottom {
+            margin-top: 20px;
+            padding: 10px 0;
+            background: black;
+            color: white;
+        }
+        
+        /* Scroll buttons */
+        .scroll-buttons {
+            position: fixed;
+            right: 20px;
+            bottom: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .scroll-buttons button {
+            background-color: #005c0c;
+            color: #fff;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 18px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .scroll-buttons button:hover {
+            background-color: #d4af37;
+        }
+
+        /* News Section Styles */
+        .news-container {
+            display: flex;
+            gap: 20px;
+            margin-top: 120px; /* Adjusted for fixed header */
+            align-items: center; /* Align items vertically */
+            text-align: justify;
+        }
+        .news-image {
+            flex: 1;
+            overflow: hidden;
+            border-radius: 10px;
+        }
+        .news-image img {
+            width: 100%;
+            height: auto;
+            transition: transform 0.5s ease;
+            cursor: pointer; /* Indicates the image is clickable */
+        }
+        .news-image:hover img {
+            transform: scale(0.9);
+        }
+        .news-content {
+            flex: 2;
+            padding: 10px;
+        }
+        .news-content h2 {
+            color: #000; /* Changed title color to black */
+            margin-bottom: 10px;
+        }
+        .news-content p {
+            font-size: 1em;
+            line-height: 1.5;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="logo-container">
+            <img src="logo.png" alt="Logo">
+            <h1>Hands for Palestine</h1>
+        </div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="event.html">Event</a>
+            <a href="news.html">News</a>
+            <a href="media.html">Media</a>
+            <a href="campaigns.html">Campaigns</a>
+            <a href="get_involved.html">Donate</a>
+            <a href="aboutus.html">About Us</a>
+            <a href="resources.html">Resources</a>
+        </nav>
+    </div>
+
+    <!-- News Section -->
+    <section id="news">
+        <div class="container">
+            <!-- News Article 1 -->
+            <div class="news-container">
+                <!-- Left Column: Image -->
+                <div class="news-image">
+                    <a href="https://www.bbc.com/news/articles/c4g7n3l98z6o" target="_blank">
+                        <img src="article1.webp" alt="News Image 1">
+                    </a>
+                </div>
+                <!-- Right Column: Title and Description -->
+                <div class="news-content">
+                    <h2>Israeli hostages and Palestinian inmates freed in latest ceasefire swap.
+                    </h2>
+                    <p>Hamas has released another three Israeli hostages in exchange for hundreds of Palestinian prisoners following a week in which the fragile ceasefire deal appeared under threat.
+
+                        American-Israeli Sagui Dekel-Chen, 36, Argentinian-Israeli Yair Horn, 46, and Russian-Israeli Alexander Troufanov, 29, were freed in return for 369 Palestinians held in Israeli jails.
+                        
+                        So far 19 hostages and more than 1,000 Palestinian prisoners have been freed in the first phase of ceasefire deal which began on 19 January.
+                        
+                        The swap came days after Hamas said it would pause the release of hostages, accusing Israel of violating the terms of the deal - an allegation denied by Israel.</p>
+                </div>
+            </div>
+
+            <!-- News Article 2 -->
+            <div class="news-container">
+                <div class="news-image">
+                    <a href="https://www.middleeasteye.net/news/gaza-israeli-forces-used-80-year-old-palestinian-human-shield-killing-him" target="_blank">
+                        <img src="article2.webp" alt="News Image 2">
+                    </a>
+                </div>
+                <div class="news-content">
+                    <h2>Gaza: Israeli forces used 80-year-old Palestinian as human shield before killing him.</h2>
+                    <p>The Palestinian man, who has not been named but is believed to have been well above the age of 80, was told that if he did not carry out the searches Israeli forces would detonate the explosives and "blow off his head."
+
+                        According to HaMakom, the incident took place in May last year when Israeli soldiers from several different brigades amassed near the house of the Palestinian couple, both aged in their 80s, in Gaza City's Zeitoun neighbourhood.
+                        
+                        At the time, Israeli forces had launched their third ground assault on the area after engaging in intense fighting with Hamas and other Palestinian movements.
+                        
+                        HaMakom said that the Nahal Brigade, the Carmeli Brigade and the Multidimensional Unit, decided to use the elderly Palestinian man, who used a walking stick to get around, as the human shield.</p>
+                </div>
+            </div>
+
+            <!-- News Article 3 -->
+            <div class="news-container">
+                <div class="news-image">
+                    <a href="https://www.middleeasteye.net/news/more-aid-enters-gaza-369-palestinians-set-to-be-released" target="_blank">
+                        <img src="article3.webp" alt="News Image 3">
+                    </a>
+                </div>
+                <div class="news-content">
+                    <h2>Israel allows more aid into Gaza as 369 Palestinians set to be released.                    </h2>
+                    <p>More aid has finally entered Gaza following a tense showdown between Israel and Hamas that threatened the ceasefire deal concluded in January. 
+
+                        Ever since the inauguration of Donald Trump as US president and his declared plan to "clean out" two million Palestinians from Gaza and "own it", alongside accusations by Hamas that Israel has failed to stick to the terms of the agreement, the ceasefire has been under threat.
+                        
+                        After Hamas called on Israel to keep to the terms of the deal if it wanted the next tranche of captives released on Saturday as planned, Trump threatened that “all hell will break loose” unless all the living captives were released instead.
+                        
+                        Israel then warned of a "new Gaza war of another intensity altogether" that would "allow the realisation of Trump's vision for Gaza".</p>
+                </div>
+            </div>
+
+            <!-- News Article 4 -->
+            <div class="news-container">
+                <div class="news-image">
+                    <a href="https://www.reuters.com/world/middle-east/gazans-shed-tears-joy-disbelief-news-ceasefire-deal-2025-01-15/" target="_blank">
+                        <img src="article4.png" alt="News Image 4">
+                    </a>
+                </div>
+                <div class="news-content">
+                    <h2>Gazans shed tears of joy, disbelief at news of ceasefire deal.                    </h2>
+                    <p>"I feel a mixture of happiness because lives are being saved and blood is being stopped," said Dahman, who like Ghada was displaced from Gaza City and lives in Deir al-Balah.
+                        "But I am also worried about the post-war shock of what we will see in the streets, our destroyed homes, my father whose body is still under the rubble."
+                        His mother, Bushra, said that while the ceasefire wouldn't bring her husband back, "at least it may save other lives."
+                        "I will cry, like never before. This brutal war didn't give us time to cry," said the tearful mother, speaking to Reuters by a chat app.</p>
+                </div>
+            </div>
+
+            <!-- News Article 5 -->
+            <div class="news-container">
+                <div class="news-image">
+                    <a href="https://www.reuters.com/world/international-reaction-gaza-ceasefire-deal-2025-01-15/" target="_blank">
+                        <img src="article5.png" alt="News Image 5">
+                    </a>
+                </div>
+                <div class="news-content">
+                    <h2>Israel-Gaza ceasefire deal: Reactions and quotes from world leaders.                    </h2>
+                    <p>"We have a deal for the hostages in the Middle East. They will be released shortly. Thank you!" he said in a post on his Truth Social platform.
+                        "With this deal in place, my National Security team, through the efforts of Special Envoy to the Middle East, Steve Witkoff, will continue to work closely with Israel and our Allies to make sure Gaza NEVER again becomes a terrorist safe haven," Trump said in a second post.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>About Us</h3>
+                <p>Hands for Palestine is dedicated to supporting Palestinian communities through advocacy, education, and humanitarian aid.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="news.html">News</a></li>
+                    <li><a href="contact_us.html">About</a></li>
+                    <li><a href="campaigns.html">Campaigns</a></li>
+                    <li><a href="event.html">Events</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p>Email: <a href="mailto:info@handsforpalestine.org">info@handsforpalestine.org</a></p>
+                <p>Phone: +123 456 7890</p>
+                <p>Address: 123 Freedom Street, Palestine</p>
+            </div>
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/share/g/19YasHMiZS/"><img src="facebook-icon.png" alt="Facebook"></a>
+                    <a href="https://x.com/Palestinell"><img src="twitter-icon.png" alt="Twitter"></a>
+                    <a href="https://www.instagram.com/eye.on.palestine?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="><img src="instagram.png" alt="Instagram"></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Hands for Palestine. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Scroll buttons -->
+    <div class="scroll-buttons">
+        <button onclick="scrollToTop()">&#9650;</button>
+        <button onclick="scrollToBottom()">&#9660;</button>
+    </div>
+
+    <script>
+        // Function to highlight the active navigation link based on scroll position
+        document.addEventListener("DOMContentLoaded", function () {
+            const sections = document.querySelectorAll("section");
+            const navLinks = document.querySelectorAll(".nav-link");
+            
+            function highlightNav() {
+                let currentSection = "";
+                sections.forEach((section) => {
+                    const sectionTop = section.offsetTop;
+                    const sectionHeight = section.clientHeight;
+                    if (window.scrollY >= sectionTop - 50) {
+                        currentSection = section.getAttribute("id");
+                    }
+                });
+                navLinks.forEach((link) => {
+                    link.classList.remove("active");
+                    if (link.getAttribute("href").substring(1) === currentSection) {
+                        link.classList.add("active");
+                    }
+                });
+            }
+            window.addEventListener("scroll", highlightNav);
+            highlightNav(); // Run on page load
+        });
+
+        // Function to scroll to the top of the page
+        function scrollToTop() {
+            window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
+        }
+
+        // Function to scroll to the bottom of the page
+        function scrollToBottom() {
+            window.scrollTo({ top: document.body.scrollHeight, left: 0, behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>

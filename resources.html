@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resources | Palestine Solidarity</title>
+    <style>
+        /* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f4f4f4;
+    color: #333;
+}
+
+body {
+          background-image: url('https://www.opensecrets.org.za/wp-content/uploads/2023/10/2023.10.27_Palestine-Media-Statement_MM1.png');
+        }
+
+        .header {
+            background-color: #005c0c;
+            color: white;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+        }
+
+        .header img {
+            height: 100px;
+            width: 100px;
+        }
+
+        .header .logo-container h1 {
+            margin-left: 15px;
+            font-size: 24px;
+        }
+
+        .header nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+            position: relative;
+            font-size: 1.2em;
+        }
+
+        .header nav a::after {
+            content: "";
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background-color: #d4af37;
+            bottom: -5px;
+            left: 0;
+            transition: width 0.3s;
+        }
+
+        .header nav a:hover::after {
+            width: 100%;
+        }
+
+        .header nav a:hover {
+            color: #d4af37;
+        }
+
+/* Download Section */
+.download-section {
+    text-align: center;
+    padding: 20px;
+}
+
+.download-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.download-section li {
+    margin: 10px 0;
+}
+
+.download-section a {
+    text-decoration: none;
+    color: #ff0000;
+    font-weight: bold;
+}
+
+.download-section a:hover {
+    color: #8b0000;
+}
+
+/* Image Gallery */
+.gallery {
+    text-align: center;
+    padding: 20px;
+}
+
+.gallery-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 10px;
+    justify-content: center;
+    padding: 20px;
+}
+
+.gallery-container img {
+    width: 100%;
+    height: auto;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.gallery-container img:hover {
+    transform: scale(1.1);
+}
+
+/* Lightbox Modal */
+.lightbox {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+}
+
+.lightbox img {
+    max-width: 90%;
+    max-height: 80vh;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+}
+
+/* Footer Styles */
+footer {
+            background-color: #005c0c;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        .footer-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            max-width: 1200px;
+            margin: auto;
+            padding: 20px;
+        }
+
+        .footer-section {
+            flex: 1;
+            min-width: 250px;
+            margin: 10px;
+        }
+
+        .footer-section h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+            border-bottom: 2px solid white;
+            display: inline-block;
+            padding-bottom: 5px;
+        }
+
+        .footer-section ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-section ul li {
+            margin: 5px 0;
+        }
+
+        .footer-section ul li a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .footer-section ul li a:hover {
+            text-decoration: underline;
+        }
+
+        .social-icons img {
+            width: 50px;
+            height: 50px;
+        }
+
+        .footer-bottom {
+            margin-top: 20px;
+            padding: 10px 0;
+            background: black;
+            color: white;
+        }
+
+    </style>
+</head>
+<body>
+   
+    <div class="header">
+        <div class="logo-container">
+            <img src="logo.png" alt="Logo">
+            <h1>Hands for Palestine</h1>
+        </div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="event.html">Event</a>
+            <a href="news.html">News</a>
+            <a href="media.html">Media</a>
+            <a href="campaigns.html">Campaigns</a>
+            <a href="get_involved.html">Donate</a>
+            <a href="aboutus.html">About Us</a>
+            <a href="resources.html">Resources</a>
+        </nav>
+    </div>
+
+    <section class="download-section">
+        <h2 style="color: white;">Educational Materials</h2>
+        <p style="color: white;">Download PDFs and access research links to learn more about Palestine.</p>
+        <ul>
+            <li><a href="The_Palestinian_People__A_History.pdf" download>📄 History of Palestine</a></li>
+            <li><a href="Human Rights Reports.pdf" download>📄 Human Rights Reports [refer to Palestinian Territories page 211]</a></li>
+            <li><a href="https://bdsmovement.net/">🌍 BDS Movement Website</a></li>
+        </ul>
+    </section>
+
+    <section class="gallery">
+        <h2 style="color: black; background-color: aliceblue;">Image Gallery</h2>
+        <div class="gallery-container">
+            <img src="protest.jpg" alt="Protest in Palestine" onclick="openLightbox(this)">
+            <img src="culture.jpg" alt="Palestinian Culture" onclick="openLightbox(this)">
+            <img src="march.jpg" alt="Solidarity March" onclick="openLightbox(this)">
+            <img src="gaza.jpg" alt="Gaza Humanitarian Aid" onclick="openLightbox(this)">
+        </div>
+    </section>
+
+    <!-- Lightbox Modal -->
+    <div id="lightbox" class="lightbox">
+        <span class="close" onclick="closeLightbox()">&times;</span>
+        <img id="lightbox-img">
+    </div>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>About Us</h3>
+                <p>Hands for Palestine is dedicated to supporting Palestinian communities through advocacy, education, and humanitarian aid.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="news.html">News</a></li>
+                    <li><a href="contact_us.html">About</a></li>
+                    <li><a href="campaigns.html">Campaigns</a></li>
+                    <li><a href="event.html">Events</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p>Email: <a href="mailto:info@handsforpalestine.org">info@handsforpalestine.org</a></p>
+                <p>Phone: +123 456 7890</p>
+                <p>Address: 123 Freedom Street, Palestine</p>
+            </div>
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/share/g/19YasHMiZS/"><img src="facebook-icon.png" alt="Facebook"></a>
+                    <a href="https://x.com/Palestinell"><img src="twitter-icon.png" alt="Twitter"></a>
+                    <a href="https://www.instagram.com/eye.on.palestine?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="><img src="instagram.png" alt="Instagram"></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Hands for Palestine. All Rights Reserved.</p>
+        </div>
+    </footer>
+    <script>
+        // Lightbox Functionality for Image Gallery
+function openLightbox(img) {
+    document.getElementById("lightbox-img").src = img.src;
+    document.getElementById("lightbox").style.display = "flex";
+}
+
+function closeLightbox() {
+    document.getElementById("lightbox").style.display = "none";
+}
+
+    </script>
+</body>
+</html>

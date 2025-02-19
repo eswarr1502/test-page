@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Hands for Palestine: Supporting Palestinian Rights">
+    <meta name="author" content="Hands for Palestine">
+    <title>Hands for Palestine</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: black;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Header Styles */
+        .header {
+            background-color: #005c0c;
+            color: white;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+        }
+
+        .header img {
+            height: 100px;
+            width: 100px;
+        }
+
+        .header .logo-container h1 {
+            margin-left: 15px;
+            font-size: 24px;
+        }
+
+        .header nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+            position: relative;
+            font-size: 1.2em;
+        }
+
+        .header nav a::after {
+            content: "";
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background-color: #d4af37;
+            bottom: -5px;
+            left: 0;
+            transition: width 0.3s;
+        }
+
+        .header nav a:hover::after {
+            width: 100%;
+        }
+
+        .header nav a:hover {
+            color: #d4af37;
+        }
+
+        /* Section Styles */
+        section {
+            padding: 2rem;
+            text-align: center;
+        }
+
+        h2 {
+            font-size: 30px;
+            margin-bottom: 10px;
+            background-color: red;
+            color: white;
+        }
+
+        /* Slider Styles */
+        .slider-container {
+            position: relative;
+            width: 100%;
+            height: 500px;
+            overflow: hidden;
+            margin: auto;
+            border: 1px solid;
+            background-color: white;
+			border: 1px solid red;
+        }
+
+        .slides {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .slide {
+            display: flex;
+            width: 100%;
+            height: 100%;
+            flex: 0 0 100%;
+        }
+
+        .slide img {
+            width: 500px;
+            height: 500px;
+            object-fit: cover;
+        }
+
+        .slide p {
+            width: 500px;
+            padding: 50px;
+            margin-top: 50px;
+            font-size: 20px;
+            line-height: 1.5;
+            text-align: left;
+        }
+
+        .dots-container {
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .dot {
+            height: 10px;
+            width: 10px;
+            margin: 0 5px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+            transition: background 0.5s;
+            cursor: pointer;
+        }
+
+        .dot.active {
+            background-color: #333;
+        }
+
+        /* Article Styles */
+        .article {
+            max-width: 100%;
+            margin: 20px auto;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            margin-top: 150px;
+        }
+
+        .article-title {
+            font-size: 28px;
+            color: #007BFF;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .article-intro {
+            font-size: 18px;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+
+        .mission h2 {
+            color: yellow;
+            background-color: red;
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .mission h3 {
+            font-size: 20px;
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+        .mission-item {
+            background: #f9f9f9;
+            padding: 15px;
+            margin: 15px 0;
+            border-left: 5px solid #007BFF;
+            border-radius: 5px;
+            text-align: left;
+        }
+
+        .mission-item h4 {
+            color: #333;
+            font-size: 18px;
+            margin-bottom: 5px;
+        }
+
+        .mission-item p {
+            font-size: 16px;
+            line-height: 1.5;
+            color: #666;
+        }
+
+        /* Newsletter and Contact Us Styles */
+		
+        .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+			gap: 20px;
+        }		
+		
+        .newsletter {
+            width: 500px;
+			height: 200px;
+            padding: 10px;
+			margin: 10px;
+			text-align: center;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            background-color: #f9f9f9;
+			flex: 1;
+        }
+		
+		.contact {
+            width: 500px;
+			height: 300px;
+            padding: 10px;
+			margin: 20px;
+			text-align: center;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            background-color: #f9f9f9;
+			flex: 1;
+        }
+        .newsletter h2, .contact h2 {
+            margin-top: 0;
+        }
+        input, textarea, button {
+            width: 90%;
+            padding: 10px;
+            margin-top: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        /* Footer Styles */
+        footer {
+            background-color: #005c0c;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        .footer-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            max-width: 1200px;
+            margin: auto;
+            padding: 20px;
+        }
+
+        .footer-section {
+            flex: 1;
+            min-width: 250px;
+            margin: 10px;
+        }
+
+        .footer-section h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+            border-bottom: 2px solid white;
+            display: inline-block;
+            padding-bottom: 5px;
+        }
+
+        .footer-section ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-section ul li {
+            margin: 5px 0;
+        }
+
+        .footer-section ul li a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .footer-section ul li a:hover {
+            text-decoration: underline;
+        }
+
+        .social-icons img {
+            width: 50px;
+            height: 50px;
+        }
+
+        .footer-bottom {
+            margin-top: 20px;
+            padding: 10px 0;
+            background: black;
+            color: white;
+        }
+
+        /* Scroll Buttons Styles */
+        .scroll-buttons {
+            position: fixed;
+            right: 20px;
+            bottom: 20px;
+            display: flex;
+			justify-content: center;
+			align-items: center;
+            border: none;
+            flex-direction: column;
+            gap: 1px;
+        }
+        .scroll-buttons button {
+			background-color: #005c0c;
+            color: #fff;
+			width: 50px;
+			height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 18px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .scroll-buttons button:hover {
+            background-color: #d4af37;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .article {
+                padding: 20px;
+            }
+
+            .article-title {
+                font-size: 24px;
+            }
+
+            .mission-item {
+                padding: 10px;
+            }
+
+            #newsletter, #contact {
+                padding: 20px;
+            }
+
+            form input, form textarea, form button {
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="logo-container">
+            <img src="logo.png" alt="Logo">
+            <h1>Hands for Palestine</h1>
+        </div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="event.html">Event</a>
+            <a href="news.html">News</a>
+            <a href="media.html">Media</a>
+            <a href="campaigns.html">Campaigns</a>
+            <a href="get_involved.html">Donate</a>
+            <a href="aboutus.html">About Us</a>
+            <a href="resources.html">Resources</a>
+        </nav>
+    </div>
+    <main>
+        <section id="home">
+            <h2>Welcome to Hands for Palestine</h2>
+            <div class="slider-container">
+                <div class="slides">
+                    <div class="slide">
+                        <img src="https://tse2.mm.bing.net/th?id=OIP.FMGq0RYBTJdimedjBx5x0wHaEj&w=291&h=291&c=7" alt="Slide 1">
+                        <p>Urgent evacuation of Palestinian premature babies from Al-Aqsa Hospital to Nasser Hospital in Khan Younis following Israeli evacuation orders. The scene captures the vulnerability of these newborns, many of whom rely on incubators and medical support to survive. Due to the ongoing conflict, hospitals in Gaza have struggled with power shortages, limited medical supplies, and the destruction of healthcare infrastructure, putting the lives of these fragile infants at severe risk.</p>
+						<img src="https://tse1.mm.bing.net/th?id=OIP.6TTWiMkpU6dJEh0NvIWThwHaE7&w=315&h=315&c=7" alt="Second image">					
+					</div>
+                    <div class="slide">
+                        <img src="https://tse4.mm.bing.net/th?id=OIP.jbkd__01LvvRIK35ArugkQHaE8&w=316&h=316&c=7" alt="Slide 2">
+                        <p>An Israeli delegation has arrived in Qatar for indirect ceasefire talks with Hamas, following Israel's withdrawal from the Netzarim Corridor in Gaza. This strategic move has reconnected the northern and southern regions of Gaza, facilitating movement for residents. The discussions in Qatar aim to extend the fragile truce and address the administration of post-war Gaza.</p>
+						<img src="https://tse2.mm.bing.net/th?id=OIP.4BLzUxnKRa8RDOti-6A9fwHaE8&w=316&h=316&c=7" alt="Second image">                                        
+					</div>
+                    <div class="slide">
+                        <img src="https://tse1.mm.bing.net/th?id=OIP.60QG9H82xUxPM0iBTaKD2gHaEK&w=266&h=266&c=7" alt="Slide 3">
+                        <p>The return of Palestinian civilians to northern Gaza following the ceasefire agreement that facilitated their movement. Many families had been displaced due to the ongoing conflict, and this moment marks a significant development in the humanitarian situation. The scene captures individuals carrying their belongings, walking through damaged areas, and attempting to rebuild their lives amidst the ruins.</p>
+						<img src="https://tse1.mm.bing.net/th?id=OIP.xmIsaOD_gwPHBUTeXu0pSgHaE7&w=315&h=315&c=7" alt="Second image">                                       
+					</div>
+                </div>
+            </div>
+
+            <div class="dots-container">
+                <span class="dot active" onclick="goToSlide(0)"></span>
+                <span class="dot" onclick="goToSlide(1)"></span>
+                <span class="dot" onclick="goToSlide(2)"></span>
+            </div>
+        </section>
+
+        <!-- Scroll buttons -->
+        <div class="scroll-buttons">
+            <button onclick="scrollToTop()">&#9650;</button>
+            <button onclick="scrollToBottom()">&#9660;</button>
+        </div>
+
+        <div class="article">
+            <h1 class="article-title">🤲 Hands for Palestine: Empowering Communities Through Compassionate Action</h1>
+            <p class="article-intro">
+                At <strong>Hands for Palestine</strong>, our unwavering commitment is to uplift and support Palestinian communities by 
+                providing essential resources and fostering sustainable development. We believe that every individual deserves access to 
+                basic necessities and opportunities for a dignified life.
+            </p>
+
+            <div class="mission">
+                <h2>🎯 Our Mission</h2>
+                <h3>We are dedicated to assisting those in need by ensuring they have access to:</h3>
+                
+                <div class="mission-item">
+                    <h4>💧 Clean Water</h4>
+                    <p>Implementing projects like building water wells to provide safe drinking water to communities.</p>
+                </div>
+
+                <div class="mission-item">
+                    <h4>📚 Education</h4>
+                    <p>Supporting educational initiatives that empower individuals with knowledge and skills.</p>
+                </div>
+
+                <div class="mission-item">
+                    <h4>🍞 Food & Shelter</h4>
+                    <p>Providing food baskets and housing solutions to families facing hardships.</p>
+                </div>
+
+                <div class="mission-item">
+                    <h4>🏥 Healthcare</h4>
+                    <p>Offering medical assistance and healthcare services to improve community well-being.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Newsletter Section -->
+        <div class="container">
+			<div class="newsletter">
+				<h2>Subscribe to Our Newsletter</h2>
+				<form id="newsletter-form">
+					<input type="email" id="newsletter-email" placeholder="Enter your email" required>
+					<button type="submit">Subscribe</button>
+				</form>
+			</div>
+
+			<!-- Contact Us Section -->
+			<div class="contact">
+				<h2>Contact Us</h2>
+				<form id="contact-form">
+					<input type="text" id="name" placeholder="Your Name" required>
+					<input type="email" id="email" placeholder="Your Email" required>
+					<textarea id="message" placeholder="Your Message" required></textarea>
+					<button type="submit">Send</button>
+				</form>
+			</div>
+		</div>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>About Us</h3>
+                <p>Hands for Palestine is dedicated to supporting Palestinian communities through advocacy, education, and humanitarian aid.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="news.html">News</a></li>
+                    <li><a href="contact_us.html">About</a></li>
+                    <li><a href="campaigns.html">Campaigns</a></li>
+                    <li><a href="event.html">Events</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p>Email: <a href="mailto:info@handsforpalestine.org">info@handsforpalestine.org</a></p>
+                <p>Phone: +123 456 7890</p>
+                <p>Address: 123 Freedom Street, Palestine</p>
+            </div>
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/share/g/19YasHMiZS/"><img src="facebook-icon.png" alt="Facebook"></a>
+                    <a href="https://x.com/Palestinell"><img src="twitter-icon.png" alt="Twitter"></a>
+                    <a href="https://www.instagram.com/eye.on.palestine?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="><img src="instagram.png" alt="Instagram"></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Hands for Palestine. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        let currentIndex = 0;
+        const slides = document.querySelectorAll('.slide');
+        const totalSlides = slides.length;
+        const dots = document.querySelectorAll('.dot');
+
+        function showSlide(index) {
+            const slider = document.querySelector('.slides');
+            slider.style.transform = `translateX(-${index * 100}%)`;
+
+            dots.forEach(dot => dot.classList.remove('active'));
+            dots[index].classList.add('active');
+        }
+
+        function nextSlide() {
+            currentIndex = (currentIndex + 1) % totalSlides; // Cycle through slides
+            showSlide(currentIndex);
+        }
+
+        function goToSlide(index) {
+            currentIndex = index;
+            showSlide(index);
+        }
+
+        setInterval(nextSlide, 3000); // Auto-scroll every 3 seconds
+
+        // Newsletter form handler
+        document.getElementById("newsletter-form").addEventListener("submit", function(event) {
+            event.preventDefault();
+            const email = document.getElementById("newsletter-email").value;
+            if (email) {
+                alert(`Thanks for subscribing, ${email}!`);
+                // You can add your newsletter logic here, like sending the email to a server
+            }
+        });
+
+        // Contact form handler
+        document.getElementById("contact-form").addEventListener("submit", function(event) {
+            event.preventDefault();
+            const name = document.getElementById("name").value;
+            const email = document.getElementById("email").value;
+            const message = document.getElementById("message").value;
+            if (name && email && message) {
+                alert(`Thank you, ${name}! Your message has been sent.`);
+                // You can add your contact form submission logic here
+            }
+        });
+
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function scrollToBottom() {
+            window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>

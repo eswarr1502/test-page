@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Hands for Palestine: Supporting Palestinian Rights">
+    <meta name="author" content="Hands for Palestine">
+    <title>Solidarity Walk for Palestine</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: black;
+            color: #333;
+        }
+
+        /* Header */
+        .header {
+            text-align: center;
+            background-color: #005c0c;
+            color: white;
+            padding: 10px;
+            font-size: 24px;
+            font-weight: 600;
+        }
+
+        /* Event Section */
+        .event {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .event img {
+            width: 100%;
+            max-width: 500px;
+            height: auto;
+            border-radius: 10px;
+            object-fit: cover;
+        }
+
+        .article {
+            flex: 1;
+            font-size: 18px;
+            text-align: justify;
+            padding: 20px;
+        }
+
+        /* Video Section */
+        .video-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+			margin: 50px auto;
+			padding: 10px;
+            max-width: 1200px;
+			height: 300px;
+			border: 2px solid red;
+			background-color: white;
+			cursor: pointer;
+			transition: all 0.3s ease-in-out;
+        }
+		
+		.video-container:hover {
+			transform: scale(1.05);
+		}
+
+        .video-container iframe {
+            width: 100%;
+            max-width: 500px;
+            height: 300px;
+            border-radius: 10px;
+        }
+
+       footer {
+		background-color: #005c0c;
+		color: white;
+		padding: 20px 0;
+		text-align: center;
+		}
+
+		.footer-container {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		max-width: 1200px;
+		margin: auto;
+		padding: 20px;
+		}
+
+		.footer-section {
+		flex: 1;
+		min-width: 250px;
+		margin: 10px;
+		}
+
+		.footer-section h3 {
+		font-size: 20px;
+		margin-bottom: 10px;
+		border-bottom: 2px solid white;
+		display: inline-block;
+		padding-bottom: 5px;
+		}
+
+		.footer-section ul {
+		list-style: none;
+		padding: 0;
+		}
+
+		.footer-section ul li {
+		margin: 5px 0;
+		}
+
+		.footer-section ul li a {
+		color: white;
+		text-decoration: none;
+		}
+
+		.footer-section ul li a:hover {
+		text-decoration: underline;
+		}
+
+		.social-icons img {
+		width: 50px;
+		height: 50px;
+		}
+
+		.footer-bottom {
+		margin-top: 20px;
+		padding: 10px 0;
+		background: black;
+		color: white;
+		}
+
+        @media (max-width: 768px) {
+            .event {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .article {
+                padding: 10px;
+            }
+        }
+        .scroll-buttons {
+            position: fixed;
+            right: 20px;
+            bottom: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .scroll-buttons button {
+            background-color: #005c0c;
+            color: #fff;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 18px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .scroll-buttons button:hover {
+            background-color: #d4af37;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <h1>Solidarity Walk for Palestine</h1>
+    </div>
+
+    <div class="event">
+        <img src="https://tse3.mm.bing.net/th?id=OIP.JuUcLaCnV0ot6JbWkSStcAHaEh&w=289&h=289&c=7" alt="Event">
+        <div class="article">
+            <p>
+                Malaysia has a longstanding history of supporting the Palestinian cause, often demonstrated through various solidarity events and initiatives. One such event is the "Solidarity Walk for Palestine," organized by the BDS (Boycott, Divestment, Sanctions) Movement Malaysia. These walks are held to raise awareness about the Palestinian struggle and to protest against actions perceived as oppressive towards Palestinians.
+            </p>
+            <p>
+                On January 25, 2025, a "Solidarity Walk for Palestine" took place in Bukit Bintang, Kuala Lumpur. The organizers announced a reduction in the frequency of these walks, indicating a strategic shift in their advocacy approach. In addition to these walks, Malaysia has hosted other significant events in support of Palestine. For instance, from December 26 to 31, 2024, activists organized a sit-in demonstration called the "Blockade for Palestine" outside the U.S. Embassy in Kuala Lumpur.
+            </p>
+        </div>
+    </div>
+
+    <div class="video-container">
+        <iframe src="https://www.youtube.com/embed/6C7_y8-EO7o?si=1r8WlZGV9uJ2altO" frameborder="0" allowfullscreen></iframe>
+        <iframe src="https://www.youtube.com/embed/yFSHxYExA5Q?si=qcFdmcK6isrhXSNI" frameborder="0" allowfullscreen></iframe>
+    </div>
+    <div class="scroll-buttons">
+        <button onclick="scrollToTop()">&#9650;</button>
+        <button onclick="scrollToBottom()">&#9660;</button>
+    </div>
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>About Us</h3>
+                <p>Hands for Palestine is dedicated to supporting Palestinian communities through advocacy, education, and humanitarian aid.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="news.html">News</a></li>
+                    <li><a href="contact_us.html">About</a></li>
+                    <li><a href="campaigns.html">Campaigns</a></li>
+                    <li><a href="event.html">Events</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p>Email: <a href="mailto:info@handsforpalestine.org">info@handsforpalestine.org</a></p>
+                <p>Phone: +123 456 7890</p>
+                <p>Address: 123 Freedom Street, Palestine</p>
+            </div>
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/share/g/19YasHMiZS/"><img src="facebook-icon.png" alt="Facebook"></a>
+                    <a href="https://x.com/Palestinell"><img src="twitter-icon.png" alt="Twitter"></a>
+                    <a href="https://www.instagram.com/eye.on.palestine?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="><img src="instagram.png" alt="Instagram"></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Hands for Palestine. All Rights Reserved.</p>
+        </div>
+    </footer>
+	<script>
+        function scrollToTop() {
+            window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
+        }
+
+        function scrollToBottom() {
+            window.scrollTo({ top: document.body.scrollHeight, left: 0, behavior: 'smooth' });
+        }
+	</script>
+</body>
+</html>

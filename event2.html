@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Hands for Palestine: Supporting Palestinian Rights">
+    <meta name="author" content="Hands for Palestine">
+    <title>Government Support for Gaza Reconstruction</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: black;
+            color: #333;
+        }
+
+        .header {
+            text-align: center;
+            background-color: #005c0c;
+            color: white;
+            padding: 20px;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .event {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            max-width: 1200px;
+            margin: 80px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .event img {
+            width: 100%;
+            max-width: 500px;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .article {
+            flex: 1;
+            font-size: 18px;
+            text-align: justify;
+            padding: 20px;
+        }
+
+        .video-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+			margin: 50px auto;
+			padding: 10px;
+            max-width: 1200px;
+			height: 300px;
+			border: 2px solid red;
+			background-color: white;
+			cursor: pointer;
+			transition: all 0.3s ease-in-out;
+        }
+		
+		.video-container:hover {
+			transform: scale(1.05);
+		}
+
+        .video-container iframe {
+            width: 100%;
+            max-width: 500px;
+            height: 300px;
+            border-radius: 10px;
+        }
+
+       footer {
+		background-color: #005c0c;
+		color: white;
+		padding: 20px 0;
+		text-align: center;
+		}
+
+		.footer-container {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		max-width: 1200px;
+		margin: auto;
+		padding: 20px;
+		}
+
+		.footer-section {
+		flex: 1;
+		min-width: 250px;
+		margin: 10px;
+		}
+
+		.footer-section h3 {
+		font-size: 20px;
+		margin-bottom: 10px;
+		border-bottom: 2px solid white;
+		display: inline-block;
+		padding-bottom: 5px;
+		}
+
+		.footer-section ul {
+		list-style: none;
+		padding: 0;
+		}
+
+		.footer-section ul li {
+		margin: 5px 0;
+		}
+
+		.footer-section ul li a {
+		color: white;
+		text-decoration: none;
+		}
+
+		.footer-section ul li a:hover {
+		text-decoration: underline;
+		}
+
+		.social-icons img {
+		width: 50px;
+		height: 50px;
+		}
+
+		.footer-bottom {
+		margin-top: 20px;
+		padding: 10px 0;
+		background: black;
+		color: white;
+		}
+
+        @media (max-width: 768px) {
+            .event {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .article {
+                padding: 10px;
+            }
+
+            .video-container iframe {
+                max-width: 100%;
+                height: 250px;
+            }
+        }
+        .scroll-buttons {
+            position: fixed;
+            right: 20px;
+            bottom: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .scroll-buttons button {
+            background-color: #005c0c;
+            color: #fff;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 18px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .scroll-buttons button:hover {
+            background-color: #d4af37;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Government Support for Gaza Reconstruction</h1>
+    </div>
+
+    <div class="event">
+        <img src="https://selangorjournal.my/wp-content/uploads/2025/01/2025-01-19T112756Z_1_LYNXNPEL0I04N_RTROPTP_4_ISRAEL-PALESTINIANS-GAZA-scaled-e1737294654278.jpg" alt="Event">
+        <div class="article">
+            <p>
+                Malaysia has consistently demonstrated its commitment to supporting the reconstruction of Gaza through various initiatives. Recently, the Malaysian Ministry of Foreign Affairs announced plans to host the fourth session of the Conference on Cooperation among East Asian Countries for Palestinian Development (CEAPAD) in collaboration with Japan. This conference aims to bolster international support and cooperation for sustainable reconstruction efforts in Palestine.
+            </p>
+            <p>
+                Prime Minister Anwar Ibrahim has outlined specific projects as part of Malaysia's contribution to Gaza's rebuilding efforts, including the construction of a school, a hospital, and a mosque. These initiatives address critical infrastructure needs in the region.
+            </p>
+        </div>
+    </div>
+
+    <div class="video-container">
+        <iframe src="https://www.youtube.com/embed/CNKPILtjlc0?si=HGsCFsELzpr02Tui" frameborder="0" allowfullscreen></iframe>
+		<iframe src="https://www.youtube.com/embed/v0MkFXG0FGA?si=I7W97oJ-y7Z2XZFD" frameborder="0" allowfullscreen></iframe>
+    </div>
+    <div class="scroll-buttons">
+        <button onclick="scrollToTop()">&#9650;</button>
+        <button onclick="scrollToBottom()">&#9660;</button>
+    </div>
+<footer>
+    <div class="footer-container">
+        <div class="footer-section">
+            <h3>About Us</h3>
+            <p>Hands for Palestine is dedicated to supporting Palestinian communities through advocacy, education, and humanitarian aid.</p>
+        </div>
+        <div class="footer-section">
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                    <li><a href="news.html">News</a></li>
+                    <li><a href="contact_us.html">About</a></li>
+                    <li><a href="campaigns.html">Campaigns</a></li>
+                    <li><a href="event.html">Events</a></li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h3>Contact Us</h3>
+            <p>Email: <a href="mailto:info@handsforpalestine.org">info@handsforpalestine.org</a></p>
+            <p>Phone: +123 456 7890</p>
+            <p>Address: 123 Freedom Street, Palestine</p>
+        </div>
+        <div class="footer-section">
+            <h3>Follow Us</h3>
+            <div class="social-icons">
+                <a href="https://www.facebook.com/share/g/19YasHMiZS/"><img src="facebook-icon.png" alt="Facebook"></a>
+                <a href="https://x.com/Palestinell"><img src="twitter-icon.png" alt="Twitter"></a>
+                <a href="https://www.instagram.com/eye.on.palestine?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="><img src="instagram.png" alt="Instagram"></a>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2025 Hands for Palestine. All Rights Reserved.</p>
+    </div>
+</footer>
+<script>
+        function scrollToTop() {
+            window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
+        }
+
+        function scrollToBottom() {
+            window.scrollTo({ top: document.body.scrollHeight, left: 0, behavior: 'smooth' });
+        }
+</script>
+</body>
+</html>

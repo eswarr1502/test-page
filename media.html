@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media - Palestine Awareness</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+         /* Header Styles */
+         .header {
+            background-color: #005c0c;
+            color: white;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+        }
+
+        .header img {
+            height: 100px;
+            width: 100px;
+        }
+
+        .header .logo-container h1 {
+            margin-left: 15px;
+            font-size: 24px;
+        }
+
+        .header nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+            position: relative;
+            font-size: 1.2em;
+        }
+
+        .header nav a::after {
+            content: "";
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background-color: #d4af37;
+            bottom: -5px;
+            left: 0;
+            transition: width 0.3s;
+        }
+
+        .header nav a:hover::after {
+            width: 100%;
+        }
+
+        .header nav a:hover {
+            color: #d4af37;
+        }
+
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .section {
+            margin: 40px 0;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-out;
+            text-align: justify;
+        }
+        .section:hover {
+            transform: scale(1.05);
+        }
+        .section img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+        h1, h2 {
+            color: white;
+        }
+        p {
+            font-size: 1.1em;
+            line-height: 1.6;
+        }
+        * {
+            box-sizing: border-box;
+        }
+        .mySlides {
+            display: none;
+        }
+        img {
+            vertical-align: middle;
+            width: 100%;
+            height: 400px; /* Fixed height for all slideshow images */
+            object-fit: cover; /* Ensures images maintain aspect ratio */
+        }
+        .slideshow-container {
+            max-width: 1000px;
+            position: relative;
+            margin: 50px auto; /* Added space between header and slideshow */
+            border: 5px solid #d4af37;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            border-radius: 15px;
+            overflow: hidden;
+        }
+        .text {
+            color: #fff;
+            font-size: 18px;
+            padding: 8px 12px;
+            position: absolute;
+            bottom: 8px;
+            width: 100%;
+            text-align: center;
+            background-color: rgba(0, 0, 0, 0.5);
+            border-radius: 0 0 15px 15px;
+        }
+        .numbertext {
+            color: #f2f2f2;
+            font-size: 12px;
+            padding: 8px 12px;
+            position: absolute;
+            top: 0;
+        }
+        .dot {
+            height: 15px;
+            width: 15px;
+            margin: 0 2px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+            transition: background-color 0.6s ease;
+        }
+        .active {
+            background-color: #717171;
+        }
+        .fade {
+            animation-name: fade;
+            animation-duration: 1.5s;
+        }
+        @keyframes fade {
+            from {
+                opacity: 0.4
+            }
+            to {
+                opacity: 1
+            }
+        }
+        @media only screen and (max-width: 300px) {
+            .text {
+                font-size: 11px
+            }
+        }
+        .mission, .support, .involved {
+            background-color: #eaeaea;
+            padding: 20px;
+            border-left: 5px solid #d4af37;
+        }
+        .footer {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #000;
+            color: #fff;
+            padding: 20px;
+            margin-top: 40px;
+        }
+        .additional-content {
+            background-color: #fff;
+            padding: 20px;
+            border-top: 2px solid #d4af37;
+            text-align: center;
+        }
+        .additional-content h2 {
+            color: #005c0c;
+        }
+
+         /* Footer Styles */
+         footer {
+            background-color: #005c0c;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        .footer-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            max-width: 1200px;
+            margin: auto;
+            padding: 20px;
+        }
+
+        .footer-section {
+            flex: 1;
+            min-width: 250px;
+            margin: 10px;
+        }
+
+        .footer-section h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+            border-bottom: 2px solid white;
+            display: inline-block;
+            padding-bottom: 5px;
+        }
+
+        .footer-section ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-section ul li {
+            margin: 5px 0;
+        }
+
+        .footer-section ul li a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .footer-section ul li a:hover {
+            text-decoration: underline;
+        }
+
+        .social-icons img {
+            width: 50px;
+            height: 50px;
+        }
+
+        .footer-bottom {
+            margin-top: 20px;
+            padding: 10px 0;
+            background: black;
+            color: white;
+        }
+
+
+        /* Scroll buttons */
+        .scroll-buttons {
+            position: fixed;
+            right: 20px;
+            bottom: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .scroll-buttons button {
+            background-color: #005c0c;
+            color: #fff;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 18px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .scroll-buttons button:hover {
+            background-color: #d4af37;
+        }
+
+        /* New styles for the video grid */
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .video-box {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease-out;
+            background-color: #fff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 15px;
+        }
+        .video-box iframe {
+            width: 100%;
+            height: 200px;
+            border: none;
+            border-radius: 10px;
+        }
+        .video-box h3 {
+            margin: 15px 0 10px;
+            font-size: 1.2em;
+            color: #005c0c;
+            text-align: center;
+        }
+        .video-box p {
+            font-size: 0.9em;
+            color: #555;
+            text-align: center;
+            margin: 0;
+        }
+        .video-box:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="logo-container">
+            <img src="logo.png" alt="Logo">
+            <h1>Hands for Palestine</h1>
+        </div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="event.html">Event</a>
+            <a href="news.html">News</a>
+            <a href="media.html">Media</a>
+            <a href="campaigns.html">Campaigns</a>
+            <a href="get_involved.html">Donate</a>
+            <a href="aboutus.html">About Us</a>
+            <a href="resources.html">Resources</a>
+        </nav>
+    </div>
+    
+        
+        <div class="video-grid">
+            <!-- Example Video Box -->
+            <div class="video-box">
+                <iframe src="https://www.youtube.com/embed/lOhKHym5y3s" allowfullscreen></iframe>
+                <h3>TRUTH about Palestine - Forgotten History</h3>
+                <p>Israel is once again at war for survival after 50 years, but then again Israel has never really been out of conflict.</p>
+            </div>
+            <div class="video-box">
+                <iframe src="https://www.youtube.com/embed/RW105kjNtho" allowfullscreen></iframe>
+                <h3>Palestine vs Israel</h3>
+                <p>This is how British double-dealing during WW1 ignited the conflict between Arabs and Jews in the Middle East.</p>
+            </div>
+            <div class="video-box">
+                <iframe src="https://www.youtube.com/embed/aBswCrpLSao" allowfullscreen></iframe>
+                <h3>Stories about Israel and Palestine</h3>
+                <p>From 2009, Bob Simon's report on Israelis and Palestinians who believe a two-state solution is impossible.</p>
+            </div>
+            <div class="video-box">
+                <iframe src="https://www.youtube.com/embed/YzzklDHE3w8" allowfullscreen></iframe>
+                <h3>Palestinian woman wails in anguish</h3>
+                <p>“They’re all under there. I went out to get flour. I swear, I went out to get flour.”</p>
+            </div>
+            <div class="video-box">
+                <iframe src="https://www.youtube.com/embed/_NGYXypCgrc" allowfullscreen></iframe>
+                <h3>Israel Just Ordered 1.1 Million People in Gaza</h3>
+                <p>Almost a week after a brutal attack by Israel fighters.</p>
+            </div>
+            <div class="video-box">
+                <iframe src="https://www.youtube.com/embed/k13GMlTKMQo" allowfullscreen></iframe>
+                <h3>'I want to die' - a Palestinian child in Gaza says due to war</h3>
+                <p>“I wish we would die … I am tired of living because of the war”.</p>
+            </div>
+            <div class="video-box">
+                <iframe src="https://www.youtube.com/embed/c5tWYj_Y60w" allowfullscreen></iframe>
+                <h3>Gaza towers collapse after explosion</h3>
+                <p>Two towers in Gaza City, which host media offices and residential apartments, collapsed after they were hit by an airstrike.</p>
+            </div>
+            <div class="video-box">
+                <iframe src="https://www.youtube.com/embed/aobV2A3O-XQ" allowfullscreen></iframe>
+                <h3>Israel strikes Gaza, says it will 'only intensify'</h3>
+                <p>“Israel is bombing the Gaza Strip relentlessly” and is preparing to launch a ground invasion.</p>
+            </div>
+            <div class="video-box">
+                <iframe src="https://www.youtube.com/embed/FAKNAR9S8H8" allowfullscreen></iframe>
+                <h3>‘I wish it was a dream’ says boy orphaned by Israeli attack
+                </h3>
+                <p>“I wish it was a dream”. A distraught boy in Gaza is seen in the aftermath of Israeli bombardment that killed his mother and father.
+
+                </p>
+            </div>
+            <div class="video-box">
+                <iframe src="https://www.youtube.com/embed/qEff7sxH13I" allowfullscreen></iframe>
+                <h3>Testimony of a high school teacher in Gaza who was brutally tortured in Israeli custody</h3>
+                <p>Ibrahim Al-Shawish, a high school teacher in Gaza, was taken hostage by Israel in December 2023.</p>
+            </div>
+            <div class="video-box">
+                <iframe src="https://www.youtube.com/embed/IzDvAqa7m-I" allowfullscreen></iframe>
+                <h3>Girl carries sister for an hour to get medical help
+                </h3>
+                <p>A young girl in Gaza was spotted carrying her injured sister after being hit by a car.</p>
+            </div>
+            <div class="video-box">
+                <iframe src="https://www.youtube.com/embed/UhbVB7Sv0FM" allowfullscreen></iframe>
+                <h3>World Cup fans refuse to engage with Israeli reporters
+                </h3>
+                <p>Israeli journalists in Qatar for the World Cup</p>
+            </div>
+            <div class="video-box">
+                <iframe src="https://www.youtube.com/embed/zjbMlxsqlAU" allowfullscreen></iframe>
+                <h3>Palestinian child feeds stray cats he finds in the rubble at his home in Gaza
+                </h3>
+                <p>An uncle filmed his nephew in Gaza feeding a stray cat in what is left of his home in Gaza.</p>
+            </div>
+            <div class="video-box">
+                <iframe src="https://www.youtube.com/embed/M19BV78_sgw" allowfullscreen></iframe>
+                <h3>Gaza aid doesn't meet the needs of the population’
+                </h3>
+                <p>Aid trucks were seen entering Gaza as Israel and Hamas concluded the latest captive exchange in phase one of the ceasefire agreement on Saturday.</p>
+            </div>
+            <div class="video-box">
+                <iframe src="https://www.youtube.com/embed/3wReXT-bWNk" allowfullscreen></iframe>
+                <h3>Israeli strike on southern Gaza kills two
+                </h3>
+                <p>An Israeli airstrike on south Gaza killed two policemen on Sunday morning, according to Gaza's interior ministry.
+                </p>
+            </div>
+            <div class="video-box">
+                <iframe src="https://www.youtube.com/embed/gWIesJNQHUk" allowfullscreen></iframe>
+                <h3>Freed Palestinian prisoners burn prison uniforms upon return to Gaza
+                </h3>
+                <p>Palestinian prisoners released by Israel.</p>
+            </div>
+            <div class="video-box">
+                <iframe src="https://www.youtube.com/embed/CqWOxqFvGbo" allowfullscreen></iframe>
+                <h3>Palestinian journalist discusses the importance of storytelling amidst war
+                </h3>
+                <p>Palestinian journalist Yara Eid has lost 90 family members.</p>
+            </div>
+            <div class="video-box">
+                <iframe src="https://www.youtube.com/embed/1Z0iP2U8c6M" allowfullscreen></iframe>
+                <h3>Freed Palestinian Prisoner Amir Abu Radaha Reunites with Family in Ramallah
+                </h3>
+                <p>Arrested at just fifteen, Amir Abu Radaha spent more than 30 years behind bars before being released today as part of a Gaza hostage-prisoner swap deal with Israel.</p>
+            </div>
+            <div class="video-box">
+                <iframe src="https://www.youtube.com/embed/Vevtqnt7M9k" allowfullscreen></iframe>
+                <h3>British-Palestinian originally from Gaza shocked at Trump’s 'audacity'
+                </h3>
+                <p>Hamza, a British-Palestinian originally from Gaza, condemned US President Donald Trump’s casual tone when discussing the ethnic cleansing of Palestinians in Gaza.</p>
+            </div>
+            <div class="video-box">
+                <iframe src="https://www.youtube.com/embed/sUtLxtyfjJU" allowfullscreen></iframe>
+                <h3>Massive march in solidarity with Palestine in London
+                </h3>
+                <p>Pro-Palestine protesters marched in London on Saturday, 15 February, in a national demonstration titled “Freedom for Palestine” to show solidarity with Palestine.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>About Us</h3>
+                <p>Hands for Palestine is dedicated to supporting Palestinian communities through advocacy, education, and humanitarian aid.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="news.html">News</a></li>
+                    <li><a href="contact_us.html">About</a></li>
+                    <li><a href="campaigns.html">Campaigns</a></li>
+                    <li><a href="event.html">Events</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p>Email: <a href="mailto:info@handsforpalestine.org">info@handsforpalestine.org</a></p>
+                <p>Phone: +123 456 7890</p>
+                <p>Address: 123 Freedom Street, Palestine</p>
+            </div>
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/share/g/19YasHMiZS/"><img src="facebook-icon.png" alt="Facebook"></a>
+                    <a href="https://x.com/Palestinell"><img src="twitter-icon.png" alt="Twitter"></a>
+                    <a href="https://www.instagram.com/eye.on.palestine?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="><img src="instagram.png" alt="Instagram"></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Hands for Palestine. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+
+    <!-- Scroll buttons -->
+    <div class="scroll-buttons">
+        <button onclick="scrollToTop()">&#9650;</button>
+        <button onclick="scrollToBottom()">&#9660;</button>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const sections = document.querySelectorAll("section");
+            const navLinks = document.querySelectorAll(".nav-link");
+            
+            function highlightNav() {
+                let currentSection = "";
+                sections.forEach((section) => {
+                    const sectionTop = section.offsetTop;
+                    const sectionHeight = section.clientHeight;
+                    if (window.scrollY >= sectionTop - 50) {
+                        currentSection = section.getAttribute("id");
+                    }
+                });
+                navLinks.forEach((link) => {
+                    link.classList.remove("active");
+                    if (link.getAttribute("href").substring(1) === currentSection) {
+                        link.classList.add("active");
+                    }
+                });
+            }
+            window.addEventListener("scroll", highlightNav);
+            highlightNav(); // Run on page load
+        });
+
+        // Scroll functionality
+        function scrollToTop() {
+            window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
+        }
+
+        function scrollToBottom() {
+            window.scrollTo({ top: document.body.scrollHeight, left: 0, behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>
